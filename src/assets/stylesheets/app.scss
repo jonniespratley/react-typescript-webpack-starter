@@ -1,43 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-:root
-{
-    --color-example: #fff;
+@import "@ciscodesignsystems/cds-magnetic-theme-web/css/dist/token-theme-light-variables.css";
+
+@import "@ciscodesignsystems/cds-react-button/index.css";
+@import "@ciscodesignsystems/cds-react-card/index.css";
+@import "@ciscodesignsystems/cds-react-checkbox/index.css";
+@import "@ciscodesignsystems/cds-react-collapse/index.css";
+@import "@ciscodesignsystems/cds-react-container/index.css";
+@import "@ciscodesignsystems/cds-react-date-time-picker/index.css";
+@import "@ciscodesignsystems/cds-react-header/index.css";
+@import "@ciscodesignsystems/cds-react-footer/index.css";
+@import "@ciscodesignsystems/cds-react-logos/index.css";
+@import "@ciscodesignsystems/cds-react-menu/index.css";
+@import "@ciscodesignsystems/cds-react-modal/index.css";
+@import "@ciscodesignsystems/cds-react-nav/index.css";
+@import "@ciscodesignsystems/cds-react-notification/index.css";
+@import "@ciscodesignsystems/cds-react-radio/index.css";
+@import "@ciscodesignsystems/cds-react-stepper/index.css";
+@import "@ciscodesignsystems/cds-react-select/index.css";
+@import "@ciscodesignsystems/cds-react-tag/index.css";
+@import "@ciscodesignsystems/cds-react-text-input/index.css";
+@import "@ciscodesignsystems/cds-react-toggle/index.css";
+@import "@ciscodesignsystems/cds-react-tooltip/index.css";
+@import "@ciscodesignsystems/cds-react-view-switcher/index.css";
+@import "@ciscodesignsystems/cds-react-progress-bar/index.css";
+@import "@ciscodesignsystems/cds-react-popover/index.css";
+@import "@ciscodesignsystems/cds-react-toaster/index.css";
+@import "@ciscodesignsystems/cds-react-textarea/index.css";
+@import "@ciscodesignsystems/cds-react-sticky-bar/index.css";
+:root {
+  --color-example: #fff;
 }
 
-html,body 
-{
-    font-family: "Roboto", sans-serif;
-    display: flex;
-    flex-grow: 1;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  font-size: 16px;
+
+  margin: 0;
+  font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+}
+
+#app {
     width: 100%;
     height: 100%;
-    min-height: 100vh;
-    font-size: 16px;
-    text-align: center;
-    color: var(--color-example);
-    margin: 0;
-}
 
-#app 
-{
-    background-color: #4158D0;
-    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-    color: var(--color-example);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 2rem;
 }
 
 
-.features 
-{
-    font-size: 1.7rem;
-
-    & div 
-    {
-        padding: 0.5rem;
-    }
+.hello {
+    padding: 1rem;
 }
