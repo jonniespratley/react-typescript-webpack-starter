@@ -50,6 +50,7 @@ export class Hello extends Component<HelloProps, HelloState> {
           icon={<Voicemail />}
           infoMessage=""
           label="Icon Select"
+          multiple
           options={[
             {
               icon: <CDSStatusIcon status="info" />,

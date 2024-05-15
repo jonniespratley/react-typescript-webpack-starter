@@ -24,8 +24,7 @@ export class Main extends Component<MainProps, MainState>
             <Hello message="React TypeScript Webpack Starter">
                 <div className="features">
                     <div>Webpack 5 + HMR</div>
-                    <div>TypeScript + React</div>
-                    <div>SCSS + Autoprefixing</div>
+                    
                 </div>
             </Hello>
         );
