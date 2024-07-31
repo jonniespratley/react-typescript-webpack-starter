@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import { useState } from "react";
+import React, { Component, useMemo, useState } from "react";
+import Select from "react-select";
+
 import {
   AddressBook,
   MathOperations,
@@ -8,10 +9,103 @@ import {
   Voicemail,
 } from "phosphor-react";
 import { CDSSelect } from "@ciscodesignsystems/cds-react-select";
-import { CDSNotification } from "@ciscodesignsystems/cds-react-notification";
 import { CDSButton } from "@ciscodesignsystems/cds-react-button";
-import { CDSToaster, useToast } from "@ciscodesignsystems/cds-react-toaster";
-import { CDSStatusIcon } from "@ciscodesignsystems/cds-react-icons";
+import { faker } from "@faker-js/faker";
+import { colourOptions } from "../data";
+
+
+const initialData = () => {
+  let d = [...Array(30)].map((v, i) => {
+    const label = `test - ${faker.string.numeric()}`;
+    const label2 = `test - ${faker.string.numeric()}`;
+    return {
+      name: `name_${faker.color.human()}`,
+      options: [
+        { value: label, label },
+        { value: label2, label: label2 },
+      ],
+    };
+  });
+  return d;
+};
+
+
+
+const List = () => {
+  const initialMemo = useMemo(initialData, []);
+  const [value, setValue] = useState(initialData());
+  const [formData, setFormData] = useState({});
+
+  return (
+    <div>
+      <div
+      style={{
+        height: 225,
+        overflow: "auto",
+        border: "2px solid gray",
+        padding: "1rem",
+   
+      }}
+    >
+      {value.map((v, i) => {
+        return (
+          <div key={i}>
+            # {i} 
+            <CDSSelect
+              options={v.options}
+              onChange={(item) => {
+                console.log("change", item);
+                setFormData({...formData,[i]: item})
+                setValue(initialData());
+              }}
+              multiple={i === 10 || i === 20}
+              placeholder={i === 10 || i === 20 ? "### multiple ###" : v.name}
+            />
+          </div>
+        );
+      })}
+      
+    </div>
+    <pre>{JSON.stringify(formData, null, 2)}</pre>
+    </div>
+  );
+};
+
+const SelectList = () => {
+  const initialMemo = useMemo(initialData, []);
+  const [value, setValue] = useState(initialData());
+
+  return (
+    <div
+      style={{
+        height: 300,
+        overflow: "auto",
+        border: "2px solid gray",
+        padding: "1rem",
+      }}
+    >
+      {value.map((v, i) => {
+        return (
+          <div key={i}>
+            #{i}
+            <Select
+              {...v}
+              onChange={(v) => {
+                console.log("change", v);
+                setValue(initialData());
+              }}
+              isMulti={i === 10 || i === 20}
+              placeholder={i === 10 || i === 20 ? "### multiple ###" : v.name}
+            />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+
+
 
 export interface HelloProps {
   message: string;
@@ -26,56 +120,23 @@ export class Hello extends Component<HelloProps, HelloState> {
     //const { toasts, addToast } = useToast();
     
     return (
-      <div className="hello">
+      <div className="hello" data-cds-theme="magnetic-light">
         <h1>{this.props.message}</h1>
         <div>{this.props.children}</div>
 
         <hr />
-        <CDSNotification
-          title="This is a warning"
-          onClose={() => {}}
-          status="warning"
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel unde
-          itaque, sapiente distinctio id nostrum eum illo asperiores, magnam
-          blanditiis, provident laboriosam? Perferendis nihil reiciendis at
-          quaerat nemo recusandae. Praesentium.
-        </CDSNotification>
+        <h2>Select</h2>
+      <SelectList/>
 
         <hr />
+        <h2>CDSSelect</h2>
+       <List/>
+
+        
        
         <br />
-
-        <CDSSelect
-          icon={<Voicemail />}
-          infoMessage=""
-          label="Icon Select"
-          multiple
-          options={[
-            {
-              icon: <CDSStatusIcon status="info" />,
-              label: "Option 1",
-              value: "1",
-            },
-            {
-              icon: <AddressBook size={18} />,
-              label: "Option 2",
-              value: "2",
-            },
-            {
-              icon: <MathOperations size={18} />,
-              label: "Option 3",
-              value: "3",
-            },
-            {
-              icon: <UserList size={18} />,
-              label: "Option 4",
-              value: "4",
-            },
-          ]}
-          placeholder="Select an option"
-        />
-        <br />
+      
+        
 
         
         <CDSButton>CDS Button</CDSButton>

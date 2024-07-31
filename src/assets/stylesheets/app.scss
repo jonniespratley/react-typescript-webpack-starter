@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-@import "@ciscodesignsystems/cds-magnetic-theme-web/css/dist/token-theme-light-variables.css";
+@import "@ciscodesignsystems/cds-magnetic-theme-web/css/dist/token-theme-variables.css";
+@import "@ciscodesignsystems/cds-react-select/index.css";
 
 @import "@ciscodesignsystems/cds-react-button/index.css";
 @import "@ciscodesignsystems/cds-react-card/index.css";
 @import "@ciscodesignsystems/cds-react-checkbox/index.css";
-@import "@ciscodesignsystems/cds-react-collapse/index.css";
+
 @import "@ciscodesignsystems/cds-react-container/index.css";
-@import "@ciscodesignsystems/cds-react-date-time-picker/index.css";
+
 @import "@ciscodesignsystems/cds-react-header/index.css";
 @import "@ciscodesignsystems/cds-react-footer/index.css";
 @import "@ciscodesignsystems/cds-react-logos/index.css";
@@ -16,18 +17,16 @@
 @import "@ciscodesignsystems/cds-react-nav/index.css";
 @import "@ciscodesignsystems/cds-react-notification/index.css";
 @import "@ciscodesignsystems/cds-react-radio/index.css";
-@import "@ciscodesignsystems/cds-react-stepper/index.css";
-@import "@ciscodesignsystems/cds-react-select/index.css";
+
 @import "@ciscodesignsystems/cds-react-tag/index.css";
 @import "@ciscodesignsystems/cds-react-text-input/index.css";
 @import "@ciscodesignsystems/cds-react-toggle/index.css";
 @import "@ciscodesignsystems/cds-react-tooltip/index.css";
-@import "@ciscodesignsystems/cds-react-view-switcher/index.css";
-@import "@ciscodesignsystems/cds-react-progress-bar/index.css";
+
 @import "@ciscodesignsystems/cds-react-popover/index.css";
 @import "@ciscodesignsystems/cds-react-toaster/index.css";
 @import "@ciscodesignsystems/cds-react-textarea/index.css";
-@import "@ciscodesignsystems/cds-react-sticky-bar/index.css";
+
 :root {
   --color-example: #fff;
 }
@@ -42,21 +41,14 @@ body {
   height: 100%;
   min-height: 100vh;
   font-size: 16px;
-
+  overflow: auto;
   margin: 0;
-  font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-    sans-serif;
+  font-family: sans-serif;
 }
 
 #app {
-    width: 100%;
-    height: 100%;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 

@@ -16,8 +16,6 @@
   "author": "Grant Bartlett",
   "license": "MIT",
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@ciscodesignsystems/cds-component-types": "latest",
     "@ciscodesignsystems/cds-magnetic-theme-web": "latest",
     "@ciscodesignsystems/cds-react-badge": "latest",
@@ -48,11 +46,15 @@
     "@ciscodesignsystems/cds-react-toggle": "latest",
     "@ciscodesignsystems/cds-react-tooltip": "latest",
     "@ciscodesignsystems/cds-react-view-switcher": "latest",
+    "@faker-js/faker": "^8.4.1",
     "@radix-ui/react-navigation-menu": "^1.0.0",
     "@reduxjs/toolkit": "^1.9.1",
     "classnames": "^2.3.2",
     "date-fns": ">= 2.x",
-    "phosphor-react": "^1.4.1"
+    "phosphor-react": "^1.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-select": "^5.8.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
